@@ -38,6 +38,24 @@ begin;
 update animals set species='unspecified';
 rollback;
 
+
+ /* 
+ vet-clinic=# SELECT * FROM animals;
+
+ id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
+----+------------+---------------+-----------------+----------+-----------+---------
+  2 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | 
+  3 | Gabumon    | 2018-11-15    |               2 | t        |         8 | 
+  4 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | 
+  5 | Devimon    | 2017-05-12    |               5 | t        |        11 | 
+  6 | Charmander | 2020-02-08    |               0 | f        |       -11 | 
+  7 | Plantmon   | 2022-11-15    |               2 | t        |      -5.7 | 
+  8 | Squirtle   | 1993-04-02    |               3 | t        |    -12.13 | 
+  9 | Angemon    | 2005-06-12    |               1 | t        |       -45 | 
+ 10 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | 
+ 11 | Blossom    | 1998-10-13    |               3 | t        |        17 | 
+(10 rows) */
+
 /* Inside a transaction:
 Update the animals table by setting the species column to digimon for all animals that have a name ending in mon.
 Update the animals table by setting the species column to pokemon for all animals that don't have species already set.
@@ -48,6 +66,23 @@ Begin;
 update animals set species = 'digimon' where name like '%mon';
 update animals set species = 'pokemon' where species is NULL;
 COMMIT;
+
+
+/* SELECT * FROM animals;
+ id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
+----+------------+---------------+-----------------+----------+-----------+---------
+  2 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  3 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  5 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  7 | Plantmon   | 2022-11-15    |               2 | t        |      -5.7 | digimon
+  9 | Angemon    | 2005-06-12    |               1 | t        |       -45 | digimon
+ 10 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  4 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  6 | Charmander | 2020-02-08    |               0 | f        |       -11 | pokemon
+  8 | Squirtle   | 1993-04-02    |               3 | t        |    -12.13 | pokemon
+ 11 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+(10 rows) */
+
 
 /* Now, take a deep breath and... Inside a transaction delete all records in the animals table, then roll back the transaction.
  */
