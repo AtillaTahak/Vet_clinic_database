@@ -16,7 +16,7 @@ SELECT name FROM animals WHERE date_of_birth BETWEEN '1-1-2016' AND '1-1-2019';
 
 select date_of_birth from animals where name in ('Agumon','Pikachu');
 
-/* List name and escape attempts of animals that weigh more than 10.5kg */
+/* List name and escape attempts of animals that weigh more than 10.5kg. */
 
 select name,escape_attempts from animals where weight_kg>=10.5;
 
