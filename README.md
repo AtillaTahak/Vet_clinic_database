@@ -22,6 +22,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Blog: [Blog](atillataha.blogspot.com)
 - Youtube: [YouTube](https://www.youtube.com/channel/UCmoD0x4Z9vdG2PCsI5p8FYg)
 
+👤 **Blessed Jason Mwanza**
+
+- GitHub: [@blessedjasonmwanza](https://github.com/blessedjasonmwanza)
+- Twitter: [@mwanzabj](https://twitter.com/mwanzabj)
+- LinkedIn: [Blessedjasonmwanza](https://linkedin.com/in/blessedjasonmwanza)
+- AngelList: [blessedjasonmwanza](https://angel.co/u/blessedjasonmwanza)
 
 ## 🤝 Contributing
 
